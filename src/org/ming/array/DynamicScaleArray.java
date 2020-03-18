@@ -1,53 +1,49 @@
 package org.ming.array;
 
-public class DynamicScaleArray {
+//implement an auto resize array
+public class DynamicScaleArray extends AbstactArray{
     private static final int DEFAULT_ARRAY_SIZE = 10;
-    private int size;
     private int[] data;
     private int count;
 
     public DynamicScaleArray(int capacity) {
-        this.size = capacity;
         this.data = new int[capacity];
         this.count = 0;
     }
 
-    public void insertElements(int[] array, int element, int count) {
-        // need scale
-        if (count == size) {
-            int scaledArray[] = new int[DEFAULT_ARRAY_SIZE * 2];
-            for (int i = 0; i < array.length; i++) {
-                scaledArray[i] = i;
-                count++;
-            }
-            scaledArray[array.length ] = element;
-            //return scaledArray;
-        }
-        // normal action
-        else {
-            for (int j = array.length - count; j < array.length; j++) {
-                array[j] = j;
-                count++;
-            }
-            //return array;
-        }
+    //suppose insert from the first index
+    public void insertElement(int value){
+        if(count == data.length){
+            System.out.println("resize" +count);
+            resize(2 * data.length);
 
+        }
+       // else {
+            data[count] = value;
+            count++;
+        //}
+    }
+
+    public void resize(int size){
+        int[] newArray = new int[size];
+        for (int i = 0; i < count; i++) {
+            newArray[i] = data[i];
+        }
+        data = newArray;
     }
 
 
-    public static void main(String[] args) {
-        int array[] = new int[DEFAULT_ARRAY_SIZE];
 
-//        for (int i = 0; i < 20; i++) {
-//            array[i] = i;
-//            count++;
-//        }
-//
-//       int[] result  = insertElements(array,0,count);
-//
-//        for (int j = 0; j < result.length ; j++) {
-//            System.out.println(result[j]);
-//        }
+    public static void main(String[] args) {
+        DynamicScaleArray dynamicScaleArray = new DynamicScaleArray(5);
+        dynamicScaleArray.insertElement(1);
+        dynamicScaleArray.insertElement(2);
+        dynamicScaleArray.insertElement(3);
+        dynamicScaleArray.insertElement(4);
+        dynamicScaleArray.insertElement(5);
+        dynamicScaleArray.insertElement(6);
+
+        dynamicScaleArray.printArray(dynamicScaleArray.data);
 
     }
 

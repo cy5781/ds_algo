@@ -1,6 +1,6 @@
 package org.ming.array;
 
-public class MergeSortedArrays {
+public class MergeSortedArrays extends AbstactArray{
 
     private int[] sortedArray(int[] firstArray, int[] secondArray) {
 
@@ -33,14 +33,14 @@ public class MergeSortedArrays {
         }
         return resultArray;
     }
-
-    private void printArray(int array[]) {
-        System.out.println("----------print array--------");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println("\n----------print array--------");
-    }
+    //will use printArray extends from abstractArray
+//    private void printArray(int array[]) {
+//        System.out.println("----------print array--------");
+//        for (int i = 0; i < array.length; i++) {
+//            System.out.print(array[i] + " ");
+//        }
+//        System.out.println("\n----------print array--------");
+//    }
 
     public static void main(String[] args) {
         int[] arrayA = {1, 2, 3, 4, 5, 6};

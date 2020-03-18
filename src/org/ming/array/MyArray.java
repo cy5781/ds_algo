@@ -1,7 +1,7 @@
 package org.ming.array;
 
 
-public class MyArray {
+public class MyArray extends AbstactArray{
 
     private static final int DEFAULT_ARRAY_SIZE = 10;
     private int size;
@@ -18,14 +18,14 @@ public class MyArray {
 
     }
 
-    public void printArray() {
-        System.out.println("------开始打印数组-------");
-        if(size != 0){
-            for(int i = 0 ; i<data.length; i++){
-                System.out.print(data[i] +",");
-            }
-        }
-    }
+//    public void printArray() {
+//        System.out.println("------开始打印数组-------");
+//        if(size != 0){
+//            for(int i = 0 ; i<data.length; i++){
+//                System.out.print(data[i] +",");
+//            }
+//        }
+//    }
 
 
     public static void main(String[] args) {

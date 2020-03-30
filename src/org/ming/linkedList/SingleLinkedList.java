@@ -1,5 +1,7 @@
 package org.ming.linkedList;
 
+import java.util.LinkedList;
+
 public class SingleLinkedList {
 
     Node head;
@@ -56,6 +58,22 @@ public class SingleLinkedList {
                 currentNode = currentNode.next;
             }
         }
+    }
+
+    public static SingleLinkedList reverseSingleLinkedList(SingleLinkedList list){
+        Node prev = null;
+        Node current = list.head;
+        SingleLinkedList reverseList= new SingleLinkedList();
+        while (current != null) {
+           Node nextTemp = current.next;
+           current.next = prev;
+           prev = current;
+           current = nextTemp;
+           if(prev!=null){
+               insertFromHead(reverseList,prev.data);
+           }
+        }
+        return reverseList;
     }
 
 

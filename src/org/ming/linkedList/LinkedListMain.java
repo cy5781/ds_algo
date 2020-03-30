@@ -6,6 +6,8 @@ public class LinkedListMain {
 
     public static void main(String[] args) {
         SingleLinkedList linkedList = new SingleLinkedList();
+        SingleLinkedList reversedList = new SingleLinkedList();
+
 //        linkedList.insertFromTail(linkedList,7);
 //        linkedList.insertFromTail(linkedList,6);
 //        linkedList.insertFromTail(linkedList,5);
@@ -19,6 +21,10 @@ public class LinkedListMain {
         linkedList.insertFromHead(linkedList,3);
 
         linkedList.printSingleLinkedList(linkedList);
+
+        reversedList = linkedList.reverseSingleLinkedList(linkedList);
+        reversedList.printSingleLinkedList(reversedList);
+
 
     }
 }
